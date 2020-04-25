@@ -1,0 +1,13 @@
+plugin: 'gcp_compute'
+regions: 'europe-west1'
+projects: 'inbound-coast-275214'
+service_account_file: './inbound-coast-275214-9da912ee0860.json'
+auth_kind: 'serviceaccount'
+hostnames: 'name'
+keyed_groups:
+  - key: 'zone'
+filters:
+    - name = docker*
+
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP

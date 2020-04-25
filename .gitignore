@@ -1,3 +1,31 @@
+#packer
+variables.json
+
+#terraform
+*.tfstate
+*.tfstate.
+*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
+
+#ansible
+*.retry
+jdauphant.nginx
+vault.key
+
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache
+
+#sac
+inbound-coast-275214-9da912ee0860.json
+
+
 *.pdf
 
 secrets.txt
