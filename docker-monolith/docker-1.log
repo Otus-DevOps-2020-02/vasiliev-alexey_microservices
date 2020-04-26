@@ -1,0 +1,7 @@
+REPOSITORY                  TAG                 IMAGE ID            CREATED              SIZE
+avasiliev/ubuntu-tmp-file   latest              5715cb4cfc1e        About a minute ago   125MB
+ubuntu                      16.04               005d2078bdfa        13 hours ago         125MB
+hello-world                 latest              bf756fb1ae65        3 months ago         13.3kB
+
+
+Image  -  это шаблон для создания   docker  среды, а контейнер - сама среда

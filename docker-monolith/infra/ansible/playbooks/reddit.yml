@@ -1,0 +1,13 @@
+---
+    - hosts: all
+      become: true
+#      vars:
+#        ansible_python_interpreter: /usr/bin/python3
+      tasks:
+      - name: reddit_start
+        docker_container:
+          name: reddit_app
+          image: avasiliev/otus-reddit:1.0
+          state: started
+          ports:
+            - "9292:9292"
