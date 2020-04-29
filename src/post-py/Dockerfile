@@ -1,8 +1,7 @@
 FROM python:3.6.0-alpine
-RUN set -ex &&   apk add --no-cache gcc musl-dev
 COPY . /app
 WORKDIR /app
-RUN pip install -r /app/requirements.txt
+RUN set -ex &&   apk   --no-cache --update add  gcc musl-dev &&  pip install -r /app/requirements.txt &&  apk del gcc musl-dev
 #ENV POST_DATABASE_HOST post_db
 #ENV POST_DATABASE posts
-CMD ["python3", "post_app.py"]
+ENTRYPOINT ["python3", "post_app.py"]
