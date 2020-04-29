@@ -24,8 +24,8 @@ vault.key
 
 #sac
 inbound-coast-275214-9da912ee0860.json
-
-
+build_docker_machine_gcp.sh
+switch_docker_machine.sh
 *.pdf
 
 secrets.txt
