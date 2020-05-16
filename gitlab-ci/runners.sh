@@ -9,7 +9,7 @@ while [ "$i" -le $1 ]; do
   docker run -d --name gitlab-runner$i --restart always \
   -v /srv/gitlab-runner$i/config:/etc/gitlab-runner \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  gitlab/gitlab-runner:latest 
+  gitlab/gitlab-runner:latest
 
   docker exec -it gitlab-runner$i gitlab-runner \
   register --non-interactive --executor "docker" \

@@ -1,6 +1,24 @@
 # vasiliev-alexey_microservices
 vasiliev-alexey microservices repository
 
+
+___
+###  **Устройство Gitlab CI. Построение процесса непрерывной поставки**
+1. Развернули Gitlab CI  через Docker образ в режиме Omnibus
+2. Зашли под пользователем  root и скофигурировали  безопасноть.
+3. Создали группу проектов homework и проект example
+4. Добавили наши исходники в проект и запушили его на CI
+5. Создали pipeline и поигрались с ним в  stag-и , job-ы, environment
+6. Создали и зарегистрировали runner
+7. Залили исходники  reddit. создали Job для  его сборки и деплоя
+8. Сконфигурировали создание динамических окружений
+
+ДЗ*
+1.  Сконфигурирован build_job для сборки  docker образа
+2.  Сконфигурирован deploy_dev_job для деплоя  docker образа
+3.  Создан [скрипт для  создания runner](gitlab-ci/runners.sh)
+4.  Настроена интеграция для  slack канала  https://devops-team-otus.slack.com/archives/CV7FRK4QM
+
 ___
 ###  **Docker:  сети, docker-compose**
 1. Изучили различные виды сетей  используемых в docker:
