@@ -15,9 +15,16 @@ before_script:
   - bundle install
 
 build_job:
+  image: docker:19.03.1
   stage: build
+  services:
+    - docker:dind
+  before_script:
+    - cd reddit
   script:
-    - echo 'Building'
+    - docker build -t finrerty/reddit:$CI_COMMIT_VERSION .
+    - docker login -u $DH_LOGIN -p $DH_PASSWORD
+    - docker push vasiliev-alexey/reddit:$CI_COMMIT_VERSION
 
 test_unit_job:
   stage: test
@@ -33,11 +40,18 @@ test_integration_job:
 
 deploy_dev_job:
   stage: review
+  image: google/cloud-sdk
   script:
     - echo 'Deploy'
+    - echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+    - gcloud --quiet config set project $GOOGLE_PROJECT_ID
+    - gcloud --quiet config set compute/zone $GOOGLE_COMPUTE_ZONE
+    - gcloud compute ssh docker-host --force-key-file-overwrite --command="docker run --rm -d --name reddit -p 9292:9292 $CI_REGISTRY_IMAGE\$(if [ ${CI_COMMIT_TAG} ]; then echo \":\"$CI_COMMIT_TAG; fi)"
   environment:
     name: dev
-    url: http://dev.example.com
+    url: http://35.233.123.235:9292
+    on_stop: stop_dev_job
+
 
 
 branch review:
