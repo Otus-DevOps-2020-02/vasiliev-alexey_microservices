@@ -2,11 +2,21 @@
 vasiliev-alexey microservices repository
 
 ___
-###  ** Введение в мониторинг. Системы мониторинга **
+###  **Введение в мониторинг. Системы мониторинга**
 1. Развернули контейнер с Prometheus - посмотрели его встроенные метрики
 2. В ранее созадную конфигурацию микросервисов внесли сервис по мониторингу,  и проверили что они выключились в  endpoint
 3. Поигрались с health-checks для нашей конфигурации микросервисов
 4. Добавили NodeExporter  в конфигурацию. проверили ее работу
+
+
+Ссылки на созданные образы:
+https://hub.docker.com/r/avasiliev/ui
+https://hub.docker.com/r/avasiliev/comment
+https://hub.docker.com/r/avasiliev/post 
+https://hub.docker.com/r/avasiliev/prometheus 
+
+ДЗ*
+1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
 
 
 ___

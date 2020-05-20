@@ -73,6 +73,16 @@ services:
       - front_net
       - back_net
 
+  mongo-exporter:
+    build: ../monitoring/mongo_exporter
+    image: ${USER_NAME}/mongodb_exporter:latest
+    networks:
+      - front_net
+      - back_net
+    environment:
+      MONGODB_URI: "mongodb://post_db_1:27017"
+
+
 volumes:
   post_db:
   prometheus_data:
