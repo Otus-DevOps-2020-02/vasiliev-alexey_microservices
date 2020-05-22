@@ -82,6 +82,10 @@ services:
     environment:
       MONGODB_URI: "mongodb://post_db_1:27017"
 
+  blackbox-exporter:
+    image: ${USER_NAME}/blackbox_exporter
+    networks:
+      - front_net
 
 volumes:
   post_db:

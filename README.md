@@ -12,8 +12,10 @@ ___
 Ссылки на созданные образы:
 https://hub.docker.com/r/avasiliev/ui
 https://hub.docker.com/r/avasiliev/comment
-https://hub.docker.com/r/avasiliev/post 
-https://hub.docker.com/r/avasiliev/prometheus 
+https://hub.docker.com/r/avasiliev/post
+https://hub.docker.com/r/avasiliev/prometheus
+https://hub.docker.com/r/avasiliev/mongo_exporter
+https://hub.docker.com/r/avasiliev/blackbox_exporter
 
 ДЗ*
 1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
