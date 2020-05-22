@@ -19,8 +19,8 @@ https://hub.docker.com/r/avasiliev/blackbox_exporter
 
 ДЗ*
 1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
-
-
+2. Создан [Dockerfile](monitoring/blackbox_exporter/Dockerfile)  подключен к сервисам
+3. Создан [Makefile](Makefile)   для сборки и отгрузки контейнеров
 ___
 ###  **Устройство Gitlab CI. Построение процесса непрерывной поставки**
 1. Развернули Gitlab CI  через Docker образ в режиме Omnibus
