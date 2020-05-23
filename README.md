@@ -1,6 +1,15 @@
 # vasiliev-alexey_microservices
 vasiliev-alexey microservices repository
 
+
+___
+###  **Мониторинг приложенияи инфраструктурыи инфраструктуры**
+1. Создали отдельный docker-compose конфигурацию для сервисов мониторинга
+2. Подключили сервис cAdvisor - и посмотриели на его работу
+3. Подключили сервис Grafana, настроили источник данных Prometheus, импортировали дашборд
+4. Создали свой  дашборд и добавили  туда несколько панелей с Графиками, Гистограммами, Перцнетилями
+5. Построили панель с бизнес метриками
+6. Добавили сервис с алертами, проверили его работспособность
 ___
 ###  **Введение в мониторинг. Системы мониторинга**
 1. Развернули контейнер с Prometheus - посмотрели его встроенные метрики
@@ -11,14 +20,14 @@ ___
 6. Добавили BlackboxExporter  в конфигурацию. проверили ее работу
 7. Написали Makefile для сборки и отправки образов на hub
 
-Ссылки на созданные образы:  
+Ссылки на созданные образы:
 
-https://hub.docker.com/r/avasiliev/ui  
-        https://hub.docker.com/r/avasiliev/comment  
-        https://hub.docker.com/r/avasiliev/post  
-        https://hub.docker.com/r/avasiliev/prometheus  
-        https://hub.docker.com/r/avasiliev/mongo_exporter  
-        https://hub.docker.com/r/avasiliev/blackbox_exporter  
+https://hub.docker.com/r/avasiliev/ui
+        https://hub.docker.com/r/avasiliev/comment
+        https://hub.docker.com/r/avasiliev/post
+        https://hub.docker.com/r/avasiliev/prometheus
+        https://hub.docker.com/r/avasiliev/mongo_exporter
+        https://hub.docker.com/r/avasiliev/blackbox_exporter
 
 ДЗ*
 1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
