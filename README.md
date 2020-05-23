@@ -10,6 +10,18 @@ ___
 4. Создали свой  дашборд и добавили  туда несколько панелей с Графиками, Гистограммами, Перцнетилями
 5. Построили панель с бизнес метриками
 6. Добавили сервис с алертами, проверили его работспособность
+
+
+Ссылки на созданные образы:
+
+https://hub.docker.com/r/avasiliev/ui
+        https://hub.docker.com/r/avasiliev/comment
+        https://hub.docker.com/r/avasiliev/post
+        https://hub.docker.com/r/avasiliev/prometheus
+        https://hub.docker.com/r/avasiliev/mongo_exporter
+        https://hub.docker.com/r/avasiliev/blackbox_exporter
+        https://hub.docker.com/r/avasiliev/alertmanager
+
 ___
 ###  **Введение в мониторинг. Системы мониторинга**
 1. Развернули контейнер с Prometheus - посмотрели его встроенные метрики
@@ -28,6 +40,7 @@ https://hub.docker.com/r/avasiliev/ui
         https://hub.docker.com/r/avasiliev/prometheus
         https://hub.docker.com/r/avasiliev/mongo_exporter
         https://hub.docker.com/r/avasiliev/blackbox_exporter
+
 
 ДЗ*
 1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
