@@ -1,7 +1,29 @@
 # vasiliev-alexey_microservices
 vasiliev-alexey microservices repository
 
+___
+###  **Введение в мониторинг. Системы мониторинга**
+1. Развернули контейнер с Prometheus - посмотрели его встроенные метрики
+2. В ранее созадную конфигурацию микросервисов внесли сервис по мониторингу,  и проверили что они выключились в  endpoint
+3. Поигрались с health-checks для нашей конфигурации микросервисов
+4. Добавили NodeExporter  в конфигурацию. проверили ее работу
+5. Добавили MongoExporter  в конфигурацию. проверили ее работу
+6. Добавили BlackboxExporter  в конфигурацию. проверили ее работу
+7. Написали Makefile для сборки и отправки образов на hub
 
+Ссылки на созданные образы:  
+
+https://hub.docker.com/r/avasiliev/ui  
+        https://hub.docker.com/r/avasiliev/comment  
+        https://hub.docker.com/r/avasiliev/post  
+        https://hub.docker.com/r/avasiliev/prometheus  
+        https://hub.docker.com/r/avasiliev/mongo_exporter  
+        https://hub.docker.com/r/avasiliev/blackbox_exporter  
+
+ДЗ*
+1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
+2. Создан [Dockerfile](monitoring/blackbox_exporter/Dockerfile)  подключен к сервисам
+3. Создан [Makefile](Makefile)   для сборки и отгрузки контейнеров
 ___
 ###  **Мониторинг приложенияи инфраструктурыи инфраструктуры**
 1. Создали отдельный docker-compose конфигурацию для сервисов мониторинга
