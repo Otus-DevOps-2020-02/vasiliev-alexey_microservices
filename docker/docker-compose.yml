@@ -9,6 +9,7 @@ services:
         aliases:
             - post_db_1
             - comment_db_1
+
     env_file:
       - env.list
       - .env
@@ -18,6 +19,7 @@ services:
       - 9292:${PORT}/tcp
     networks:
       - front_net
+      - prometheus_net
     env_file:
       - env.list
       - .env
@@ -26,6 +28,7 @@ services:
     image: ${USER_NAME}/post:${POST_VERSION}
     networks:
       back_net:
+      prometheus_net:
       front_net:
         aliases:
             - post_1
@@ -37,6 +40,7 @@ services:
     image: ${USER_NAME}/comment:${COMMENT_VERSION}
     networks:
       back_net:
+      prometheus_net:
       front_net:
          aliases:
             - comment_1
@@ -44,53 +48,10 @@ services:
       - env.list
       - .env
 
-  prometheus:
-    image: ${USER_NAME}/prometheus
-    ports:
-      - '9090:9090'
-    volumes:
-      - prometheus_data:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention=1d'
-    networks:
-      - front_net
-      - back_net
-
-  node-exporter:
-    image: prom/node-exporter:v0.15.2
-    user: root
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - '--path.procfs=/host/proc'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.ignored-mount-points="^/(sys|proc|dev|host|etc)($$|/)"'
-    networks:
-      - front_net
-      - back_net
-
-  mongo-exporter:
-    build: ../monitoring/mongo_exporter
-    image: ${USER_NAME}/mongodb_exporter:latest
-    networks:
-      - front_net
-      - back_net
-    environment:
-      MONGODB_URI: "mongodb://post_db_1:27017"
-
-  blackbox-exporter:
-    image: ${USER_NAME}/blackbox_exporter
-    networks:
-      - front_net
-
 volumes:
   post_db:
-  prometheus_data:
 
 networks:
     back_net:
     front_net:
+    prometheus_net:

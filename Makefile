@@ -15,7 +15,7 @@ build-blackbox-exporter:
 	cd ./monitoring/blackbox && docker build -t ${USER_NAME}/blackbox_exporter .
 
 build-mongodb-exporter:
-	cd ./monitoring/mongodb && docker build -t namontov/mongodb_exporter .
+	cd ./monitoring/mongodb && docker build -t ${USER_NAME}//mongodb_exporter .
 
 build-prometheus:
 	cd ./monitoring/prometheus && docker build -t ${USER_NAME}/prometheus .
@@ -41,7 +41,7 @@ mongodb-exporter-push:
 	docker push ${USER_NAME}/mongodb_exporter
 
 prometheus-push:
-	docker push ${USER_NAME}/ui
+	docker push ${USER_NAME}/prometheus
 
 alertmanager-push:
 	docker push ${USER_NAME}/alertmanager
