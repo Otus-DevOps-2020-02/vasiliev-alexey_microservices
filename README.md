@@ -1,6 +1,24 @@
 # vasiliev-alexey_microservices
 vasiliev-alexey microservices repository
 
+
+___
+###  **Логирование и распределенная трассировка**
+1. Установлен код измененного приложения
+2. Создан и настроен контейнер fluentd для сбора лог сообщений и пересылки их в контейнер с Elasticsearch
+3. Настроено развертывания контейнера Elasticsearch и Kibana для сбора логов и отображения в графическом виде
+4. Настроен сбор лог сообщений с сервисов post и ui с использованием fluentd
+5. Рассмотрено отображение лог сообщений в elasticsearch и kibana
+6. Настроен парсинг лог сообщений с использованием конфигурации fluentd при помощи json формата отображения логов, grok патернов и регулярных выражений
+7. Рассмотрен вариант отслеживания проблем и задержек в web приложении с использование zipkin.
+8. В задании со * была анализирована причина некоректного работа микросервиса post. С применением инструментов Zipkin и git diff была найдена ошибка в коде создающая проблему в задержки открытия поста на портале. При запросе записи в БД процесс засыпал на 3 секунды.Найденная фукнция time.sleep(3) в коде (post_app.py 167):
+
+        app.post_read_db_seconds.observe(resp_time)
+        time.sleep(3)
+        log_event('info', 'post_find',
+                  'Successfully found the post information',
+                  {'post_id': id})
+
 ___
 ###  **Введение в мониторинг. Системы мониторинга**
 1. Развернули контейнер с Prometheus - посмотрели его встроенные метрики
@@ -11,14 +29,14 @@ ___
 6. Добавили BlackboxExporter  в конфигурацию. проверили ее работу
 7. Написали Makefile для сборки и отправки образов на hub
 
-Ссылки на созданные образы:  
+Ссылки на созданные образы:
 
-https://hub.docker.com/r/avasiliev/ui  
-        https://hub.docker.com/r/avasiliev/comment  
-        https://hub.docker.com/r/avasiliev/post  
-        https://hub.docker.com/r/avasiliev/prometheus  
-        https://hub.docker.com/r/avasiliev/mongo_exporter  
-        https://hub.docker.com/r/avasiliev/blackbox_exporter  
+https://hub.docker.com/r/avasiliev/ui
+        https://hub.docker.com/r/avasiliev/comment
+        https://hub.docker.com/r/avasiliev/post
+        https://hub.docker.com/r/avasiliev/prometheus
+        https://hub.docker.com/r/avasiliev/mongo_exporter
+        https://hub.docker.com/r/avasiliev/blackbox_exporter
 
 ДЗ*
 1. Создан [Dockerfile](monitoring/mongo_exporter/Dockerfile) c mongo-exporter от Pecrona, подключен к сервисам
