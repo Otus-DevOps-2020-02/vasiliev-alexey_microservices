@@ -33,3 +33,7 @@ secrets.txt
 
 
 docker/.env
+
+#k8s
+kubernetes/the_hard_way/cfssl
+kubernetes/the_hard_way/cfssljson
