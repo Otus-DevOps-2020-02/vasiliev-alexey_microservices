@@ -10,6 +10,9 @@ RUN apk add --no-cache build-base && \
     apk del build-base
 
 
-#ENV COMMENT_DATABASE_HOST comment_db
-#ENV COMMENT_DATABASE comments
+
+ENV COMMENT_DATABASE_HOST comment_db
+ENV COMMENT_DATABASE comments
+
+
 CMD ["puma"]
