@@ -1,7 +1,20 @@
 # vasiliev-alexey_microservices
 vasiliev-alexey microservices repository
 
-___
+
+###  **Kubernetes: Networks, Storages**
+1. Детально изучили абстракцию Service
+2. Изучили тип подключения ClusterIP
+3. Изучили тип подключения NodePort
+4. Изучили тип подключения LoadBalancer
+5. Изучили тип подключения Ingress
+5. Изучили конфигурацию Secret
+6. Настроили TLS Termination
+7. Настроили Network Policy для нашего приложения в GKE
+8. Изучили механизмы хранения данных (Volume): emptyDir, gcePersistentDisk
+9. Изучили механизм выделения и нахначения ресурсов хранения для K8s: PersistentVolume, PersistentVolumeClaim  
+
+__
 ###  **Основные модели безопасности и контроллеры в Kubernetes**
 
 1. Установили локально cubectl , minicube
@@ -12,6 +25,7 @@ ___
 6. Создали свой Namespaces  dev - и развернули там  отдельную версию
 7. Развернули кластер  Kubernetes в GKE
 8. Создали проект для создания клатсера из  terraform
+
 ___
 ###  **Введение в Kubernetes**
 1. Установили Kubernetes (5 бинарников и куча конфигов :) ). В связи с лимитам GCE (4 публичных IP  адреса) - пришлось сократить до 4 нод. [Журнал работ по лекциям](kubernetes/the_hard_way/k8s_hard_way.md)
