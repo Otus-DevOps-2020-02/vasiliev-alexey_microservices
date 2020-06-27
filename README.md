@@ -1,6 +1,16 @@
 # vasiliev-alexey_microservices
 vasiliev-alexey microservices repository
 
+
+###  **Kubernetes. Мониторинг и логирование**
+1. Установлен Prometheus с помощью helm chart'а.
+2. Настроены сборки метрик с приложений для Prometheus.
+3.  Установлена Grafana.
+4.  Настроены графики для различных пространств и разверток с использованием variables (dashboard'ы приведены в kubernetes/Grafana_dashboard).
+5.  Установлен Elasticksearch с Kibana.
+
+
+
 ###  **CI/CD в Kubernetes**
 
 1.  Установлен helm версии 2 и 3.
