@@ -1,0 +1,7 @@
+name: comment
+version: 1.0.0
+description: OTUS reddit application UI
+maintainers:
+    - name: Alexey Vasiliev
+      email: avv@nomail.com
+appVersion: 1.0
